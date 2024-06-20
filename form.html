@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourism Registration Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(black, rgb(3, 3, 51), white);
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input.ng-invalid.ng-touched {
+            border-color: #ff0000;
+        }
+
+        input.ng-valid.ng-touched {
+            border-color: #00ff00;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        button[type="submit"],
+        button[type="button"],
+        .newsletter-btn {
+            background: linear-gradient(to right, #000000, #434343);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover,
+        button[type="button"]:hover,
+        .newsletter-btn:hover {
+            background: linear-gradient(to right, #434343, #000000);
+        }
+
+        .alert {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        angular.module('myApp', [])
+            .controller('RegistrationController', function ($scope, $http) {
+                $scope.user = {
+                    password: '',
+                    confirmPassword: '',
+                    email: '',
+                    checkbox: true,
+                    dropdown: '',
+                    phoneNumber: '',
+                    passportNumber: ''
+                };
+
+                $scope.dropdownOptions = ['Family', 'Adventure', 'Romantic', 'Wildlife'];
+
+                $scope.submitForm = function () {
+                    if ($scope.registrationForm.$valid) {
+                        if ($scope.user.password !== $scope.user.confirmPassword) {
+                            showAlert('Passwords do not match. Please try again.', true);
+                        } else {
+                            $http.post('http://localhost:9000/register', $scope.user)
+                                .then(response => {
+                                    showAlert('Form submitted successfully!', false);
+                                })
+                                .catch(error => {
+                                    showAlert('Error submitting the form. Please try again.', true);
+                                });
+                        }
+                    } else {
+                        showAlert('Please fill out all required fields correctly.', true);
+                    }
+                };
+
+                $scope.subscribeNewsletter = function () {
+                    showAlert('Subscribed to newsletter!', false);
+                };
+
+                function showAlert(message, isError) {
+                    const alertBox = document.createElement('div');
+                    alertBox.className = 'alert';
+                    alertBox.innerText = message;
+                    if (isError) {
+                        alertBox.style.backgroundColor = '#f44336'; // Red
+                    } else {
+                        alertBox.style.backgroundColor = '#4CAF50'; // Green
+                    }
+                    document.body.insertBefore(alertBox, document.body.firstChild);
+                    setTimeout(() => {
+                        alertBox.remove();
+                    }, 3000);
+                }
+            });
+    </script>
+</head>
+
+<body ng-app="myApp" ng-controller="RegistrationController">
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <form name="registrationForm" ng-submit="submitForm()" novalidate>
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="user.password" ng-minlength="5" ng-maxlength="15" ng-pattern="/^[a-zA-Z0-9]*$/" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" ng-model="user.confirmPassword" ng-pattern="/^[a-zA-Z0-9]*$/" required ng-disabled="!user.password">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" ng-model="user.email" required>
+
+            <label>
+                <input type="checkbox" ng-model="user.checkbox" required> I agree to the terms and conditions
+            </label>
+
+            <label for="dropdown">Type of Trip:</label>
+            <select id="dropdown" ng-model="user.dropdown" ng-options="option for option in dropdownOptions" required>
+                <option value="">--Select--</option>
+            </select>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" ng-model="user.phoneNumber" ng-pattern="/^[0-9]{10}$/" required>
+
+            <label for="passportNumber">Passport Number:</label>
+            <input type="text" id="passportNumber" ng-model="user.passportNumber" ng-pattern="/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <button class="newsletter-btn" type="button" ng-click="subscribeNewsletter()">Subscribe to our newsletter</button>
+    </div>
+</body>
+
+</html>

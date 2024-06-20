@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+        .header {
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img90.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header h1 {
+            font-size: 62px;
+            margin-top: 50px;
+        }
+        .header p {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 60%;
+            height: 450px;
+            margin: 20px auto;
+        }
+        .carousel-track {
+            position: relative;
+            display: flex;
+            transition: transform 0.7s ease-in;
+        }
+        .carousel-slide {
+            position: relative;
+            min-width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-slide .carousel-caption {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: white;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .carousel-btn.left {
+            left: 10px;
+        }
+        .carousel-btn.right {
+            right: 10px;
+        }
+        .carousel-btn:hover {
+            background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .description h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .description p {
+            font-size: 16px;
+            color: #777;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bern</h1>
+        <div class="carousel">
+            <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="img91.jpg" alt="Bern">
+                    <div class="carousel-caption">Bern</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img92.jpg" alt="Bern Cityscape">
+                    <div class="carousel-caption">Bern Cityscape</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img93.jpg" alt="Bern Parliament">
+                    <div class="carousel-caption">Bern Parliament</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img94.jpg" alt="Bern Cathedral">
+                    <div class="carousel-caption">Bern Cathedral</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img95.jpg" alt="Rosengarten Park">
+                    <div class="carousel-caption">Rosengarten Park</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img96.jpg" alt="Aare River">
+                    <div class="carousel-caption">Aare River</div>
+                </div>
+            </div>
+            <button class="carousel-btn right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+        <p>Explore the beauty and history of Bern, the capital city of Switzerland.</p>
+    </div>
+    <div class="description">
+        <h2>About Bern</h2>
+        <p>Bern, the capital city of Switzerland, is known for its well-preserved medieval architecture. The Old Town of Bern, a UNESCO World Heritage site, features narrow streets, arcades, and fountains dating back to the 15th century. The Federal Palace (Bundeshaus), home to the Swiss Federal Assembly and Federal Council, stands prominently in the heart of the city.</p>
+        <p>Visitors to Bern can enjoy panoramic views of the city from the Rosengarten, a beautiful rose garden perched on a hillside. The Bern Cathedral (Bern Münster), with its stunning Gothic architecture, offers breathtaking views of the city from its bell tower. The Aare River, which flows through Bern, provides opportunities for boat cruises and leisurely walks along its banks.</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    </script>
+</body>
+</html>
