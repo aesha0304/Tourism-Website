@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungfraujoch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+        .header {
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img60.jfif);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header h1 {
+            font-size: 62px;
+            margin-top: 50px;
+        }
+        .header p {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 60%;
+            height: 450px;
+            margin: 20px auto;
+        }
+        .carousel-track {
+            position: relative;
+            display: flex;
+            transition: transform 0.7s ease-in;
+        }
+        .carousel-slide {
+            position: relative;
+            min-width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-slide .carousel-caption {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: white;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .carousel-btn.left {
+            left: 10px;
+        }
+        .carousel-btn.right {
+            right: 10px;
+        }
+        .carousel-btn:hover {
+            background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .description h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .description p {
+            font-size: 16px;
+            color: #777;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Jungfraujoch</h1>
+        <div class="carousel">
+            <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="img61.jpg" alt="Jungfraujoch">
+                    <div class="carousel-caption">Jungfraujoch</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img71.jpg" alt="Jungfraujoch from the air">
+                    <div class="carousel-caption">Jungfraujoch from the air</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img63.jpg" alt="Top of Europe">
+                    <div class="carousel-caption">Top of Europe</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img66.jpg" alt="Jungfrau Glacier">
+                    <div class="carousel-caption">Jungfrau Glacier</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img64.jfif" alt="Ice Palace">
+                    <div class="carousel-caption">Ice Palace</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img65.png" alt="Swiss Alps from Jungfraujoch">
+                    <div class="carousel-caption">Swiss Alps from Jungfraujoch</div>
+                </div>
+            </div>
+            <button class="carousel-btn right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+        <p>Experience the majestic beauty of Jungfraujoch, the Top of Europe, a perfect blend of adventure and tranquility.</p>
+    </div>
+    <div class="description">
+        <h2>About Jungfraujoch</h2>
+        <p>Jungfraujoch is a saddle in the Bernese Alps, connecting the two four-thousander peaks Jungfrau and Mönch. It is a popular tourist destination and is often referred to as the Top of Europe. Jungfraujoch is accessible by the Jungfrau Railway, which climbs from Kleine Scheidegg to the railway station at Jungfraujoch, making it the highest railway station in Europe.</p>
+        <p>Visitors to Jungfraujoch can experience stunning views of the Aletsch Glacier, the longest glacier in the Alps, and enjoy activities such as visiting the Ice Palace, Snow Fun Park, and hiking in the high-altitude Alpine environment. The Sphinx Observatory, located at the top of Jungfraujoch, offers a 360-degree view of the surrounding peaks and valleys.</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    </script>
+</body>
+</html>

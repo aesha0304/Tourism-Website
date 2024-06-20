@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakeside Escape Itinerary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+        .day {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .day_title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideInFromRight 1s ease-in-out;
+        }
+        .day_desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .button {
+            background-color: #f78f1e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 1rem;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #c66e00;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Lakeside Escape Itinerary</h1>
+        <div class="day">
+            <h2 class="day_title">Day 1: Arrival in Geneva</h2>
+            <p class="day_desc">
+                Arrive in Geneva and check in to your hotel. Spend the rest of the day exploring the city's landmarks and getting acclimated.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 2: Explore Geneva</h2>
+            <p class="day_desc">
+                Visit the United Nations Headquarters, the Jet d'Eau, and stroll through the city's beautiful parks and museums.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 3: Travel to Montreux</h2>
+            <p class="day_desc">
+                Travel to Montreux by train. Explore the vineyards and castles around Lake Geneva, and visit the famous Chillon Castle.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 4: Boat Trip on Lake Geneva</h2>
+            <p class="day_desc">
+                Enjoy a scenic boat trip on Lake Geneva, taking in the breathtaking views and relaxing on the water.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 5: Explore Lausanne and Departure</h2>
+            <p class="day_desc">
+                Travel to Lausanne and explore the cultural heritage of the city. Stroll along the lakeside promenade before departing for the airport.
+            </p>
+        </div>
+        <a href="form.html"><button class="button">Book Package</button></a>
+    </div>
+</body>
+</html>

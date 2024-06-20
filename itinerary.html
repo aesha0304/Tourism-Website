@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Adventure Itinerary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+        .day {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .day_title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideInFromRight 1s ease-in-out;
+        }
+        .day_desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .button {
+            background-color: #f78f1e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 1rem;
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #c66e00;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Detailed Itinerary</h1>
+        <div class="day">
+            <h2 class="day_title">Day 1: Arrival in Zermatt</h2>
+            <p class="day_desc">
+                Arrive in Zermatt and check in to your hotel. Spend the rest of the day exploring the charming village and getting acclimated.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 2: Matterhorn Excursion</h2>
+            <p class="day_desc">
+                Take a cable car ride up to the Matterhorn Glacier Paradise for breathtaking views of the iconic mountain and surrounding peaks. Optional: Skiing or snowboarding.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 3: Travel to Interlaken</h2>
+            <p class="day_desc">
+                Travel to Interlaken by train. Check into your hotel and explore the area, known for its stunning lakes and adventurous activities.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 4: Adventure Sports in Interlaken</h2>
+            <p class="day_desc">
+                Enjoy a day of adventure sports including paragliding, canyoning, or bungee jumping. Return to your hotel for a relaxing evening.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 5: Travel to Lucerne</h2>
+            <p class="day_desc">
+                Travel to Lucerne by train. Check into your hotel and explore the medieval architecture and lakeside scenery.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 6: Exploring Lucerne</h2>
+            <p class="day_desc">
+                Visit the Chapel Bridge, the Lion Monument, and take a boat trip on Lake Lucerne. Enjoy a farewell dinner at a local restaurant.
+            </p>
+        </div>
+        <div class="day">
+            <h2 class="day_title">Day 7: Departure</h2>
+            <p class="day_desc">
+                Check out from your hotel and depart for the airport. End of the tour.
+            </p>
+        </div>
+        <a href="form.html"><button class="button">Book Package</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zermatt and the Matterhorn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            color: #333;
+        }
+        .header {
+            height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img70.jfif);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .header h1 {
+            font-size: 62px;
+            margin-top: 50px;
+        }
+        .header p {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 60%;
+            height: 450px;
+            margin: 20px auto;
+        }
+        .carousel-track {
+            position: relative;
+            display: flex;
+            transition: transform 0.7s ease-in;
+        }
+        .carousel-slide {
+            position: relative;
+            min-width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-slide .carousel-caption {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: white;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .carousel-btn.left {
+            left: 10px;
+        }
+        .carousel-btn.right {
+            right: 10px;
+        }
+        .carousel-btn:hover {
+            background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .description h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .description p {
+            font-size: 16px;
+            color: #777;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Zermatt and the Matterhorn</h1>
+        <div class="carousel">
+            <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="img50.jpg" alt="Zermatt and the Matterhorn">
+                    <div class="carousel-caption">Zermatt and the Matterhorn</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img51.jpg" alt="Zermatt village">
+                    <div class="carousel-caption">Zermatt village</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img52.jpg" alt="Gornergrat Railway">
+                    <div class="carousel-caption">Gornergrat Railway</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img53.jpg" alt="Alpine hiking trail">
+                    <div class="carousel-caption">Alpine hiking trail</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img54.webp" alt="Skiing in Zermatt">
+                    <div class="carousel-caption">Skiing in Zermatt</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="img55.jpg" alt="Zermatt in summer">
+                    <div class="carousel-caption">Zermatt in summer</div>
+                </div>
+            </div>
+            <button class="carousel-btn right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+        <p>Experience the majestic beauty of Zermatt and the Matterhorn, a perfect blend of adventure and tranquility.</p>
+    </div>
+    <div class="description">
+        <h2>About Zermatt</h2>
+        <p>Zermatt is a picturesque mountain village nestled in the Swiss Alps. It offers world-class skiing, mountaineering, and breathtaking views of the iconic Matterhorn. Zermatt is car-free, ensuring clean air and a tranquil atmosphere. Visitors can enjoy the Gornergrat Railway, which provides stunning views of the surrounding peaks and glaciers. During the summer, the area is perfect for hiking, biking, and exploring the pristine alpine landscape. The Matterhorn, with its iconic pyramid shape, towers over the village and is a must-see for any visitor.</p>
+        <p>Other notable attractions in Zermatt include the Matterhorn Museum, which offers insights into the history and culture of the region, and the Glacier Paradise, the highest cable car station in Europe. Visitors can also explore the charming streets of Zermatt, filled with shops, restaurants, and traditional chalets. For adventure seekers, there are numerous trails for hiking and mountain biking, as well as opportunities for paragliding and helicopter tours.</p>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveCarousel(direction) {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const slideWidth = slides[0].getBoundingClientRect().width;
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    </script>
+</body>
+</html>

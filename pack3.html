@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakeside Escape Package</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .package {
+            position: relative;
+        }
+        .explore_image {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .explore_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        .explore_img:hover {
+            transform: scale(1.1);
+        }
+        .exp_shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        .explore_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .exp_data {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .sect_title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .exp_desc {
+            font-size: 1.1rem;
+            margin: 0 auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .exp_desc ul {
+            list-style-type: disc;
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+        .button {
+            background-color: #f78f1e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        .button:hover {
+            background-color: #c66e00;
+        }
+    </style>
+</head>
+<body>
+    <div class="package">
+        <div class="explore_image">
+            <img src="img22.jpg" alt="Lakeside Escape" class="explore_img">
+            <div class="exp_shadow"></div>
+        </div>
+        <div class="explore_container">
+            <div class="exp_data">
+                <h2 class="sect_title">
+                    Lakeside Escape
+                </h2>
+                <p class="exp_desc">
+                    <b>Duration:</b> 5 Days / 4 Nights<br>
+                    <b>Destinations:</b> Geneva, Montreux, Lausanne<br>
+                    <b>Activities:</b><br>
+                    Explore the beautiful city of Geneva and visit the United Nations Headquarters.<br>
+                    Discover the vineyards and castles around Lake Geneva in Montreux.<br>
+                    Enjoy a boat trip on Lake Geneva and visit the Chillon Castle.<br>
+                    Experience the cultural heritage of Lausanne and stroll along the lakeside promenade.<br>
+                    <b>Accommodation:</b> 4-star hotels with breakfast included.<br>
+                    <b>Price:</b> Starting from <b>$1200</b> per person.
+                </p>
+                <a href="itinerary3.html"><button class="button">View Itinerary</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

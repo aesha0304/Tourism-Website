@@ -1,0 +1,478 @@
+*{
+    margin:0;
+    padding:0;
+}
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }  
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img1.webp);
+    background-position: center;
+    background-size: center;
+    position: relative;
+}
+.header nav a img {
+    height: 50px; 
+    width: auto; 
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 1000; 
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 15px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f0766e;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box h2{
+    font-size: 62px;
+    color: bisque;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 18px;
+    color: white;
+}
+.visit{
+    display: inline-block;
+    text-decoration: none;
+    color: beige;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.visit:hover{
+    border: 1px solid pink;
+    background: rgb(243, 42, 75);
+    transition: 0.8s;
+}
+nav .fa{
+    display: none;
+}
+ @media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f0766e;
+        height: 100vh;
+        width: 200px;
+        top:0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    .header .nav-links.show {
+        right: 0;
+    }
+    
+    .header .nav-links.show ~ .fa-bars {
+        display: none;
+    }
+    
+    .header .nav-links.show ~ .fa-window-close {
+        display: block;
+    }
+ }
+
+ .places{
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    padding-top: 100px;
+ }
+ h1{
+    font-size: 36px;
+ }
+ p{
+    color: #777;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+ }
+ .row{
+    margin-top:5%;
+    display: flex;
+    justify-content: space-between;
+ }
+ .places-col{
+    flex-basis:calc(20% - 10px);
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+ }
+ h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+ }
+ .places-col:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+ }
+ .places-col img {
+    display: block;
+    width: 100%;
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.places-col:hover img {
+    transform: scale(1.05); 
+}
+ @media(max-width:700px){
+    .row{
+        flex-direction: column;
+    }
+    .places-col {
+        flex-basis: 100%; 
+    }
+ }
+
+ .activities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+ }
+ .act-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+ }
+ .act-col img{
+    width: 100%;
+    display: block;
+ }
+ .layer{
+    background:transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+ }
+ .layer:hover{
+    background:  rgba(252, 118, 118, 0.7);
+ }
+ .layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 27px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute ;
+    opacity: 0;
+    transition: 0.5s;
+ }
+ .layer:hover h3{
+    bottom: 50%;
+    opacity: 1;
+ }
+
+ .packages{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+ }
+ .pack-col{
+    flex-basis: 30%;
+    background: #fce6e6;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    transition:0.5s;
+ }
+ .pack-col img{
+    display: block;
+    border-radius: 8px;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+ }
+ .pack-col p{
+    padding: 0;
+ }
+ .pack-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+ }
+ .pack-col:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+ }
+ .pack-col:hover img {
+    transform: scale(1.05); 
+}
+.about {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #fff3f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #777;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.reviews {
+    margin-top: 30px;
+}
+
+.review {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    cursor:pointer;
+}
+
+.review h3 {
+    text-align: left;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.stars {
+    color: #f39c12; /* Golden color for stars */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.about h2{
+    text-align: left;
+}
+.review p {
+    color: #555;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media (max-width: 700px) {
+    .about {
+        width: 95%;
+    }
+}
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img26.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: wheat;
+    margin-bottom: 40px;
+    padding: 0;
+}
+@media(max-width:700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+.icons .fab{
+    text-decoration-color: #f8f1f1;
+    color:#f8f1f1;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.cta p{
+    color:#f8f1f1;
+}
+.far fa-heart{
+    color: #f36f65;
+}
